@@ -1,0 +1,51 @@
+"use client";
+
+import { useEffect, useState } from 'react';
+import styles from './PhotoRotator.module.css';
+
+const images = [
+    { src: '/images/rotator/01-travis-construction.png', alt: 'Travis construction', position: 'left center' },
+    { src: '/images/rotator/02-guy-travis-logo.png', alt: 'Travis logo on worker', position: 'left center' },
+    { src: '/images/rotator/03-drawing-stock.png', alt: 'Drafting stock photo', position: 'center' },
+    { src: '/images/rotator/04-close-inspecting.png', alt: 'Close inspecting', position: 'center' },
+    { src: '/images/rotator/05-travis-worker.png', alt: 'Travis worker', position: 'center' },
+];
+
+export default function PhotoRotator() {
+    const [index, setIndex] = useState(0);
+
+    useEffect(() => {
+        const id = setInterval(() => {
+            setIndex((i) => (i + 1) % images.length);
+        }, 6500);
+        return () => clearInterval(id);
+    }, []);
+
+    return (
+        <section className={styles.section}>
+            <div className={styles.container}>
+                <h2 className={styles.title}>Field Work Highlights</h2>
+                <p className={styles.subtitle}>A rotating snapshot of our teams in action.</p>
+                <div className={styles.frame}>
+                    <img
+                        key={images[index].src}
+                        src={images[index].src}
+                        alt={images[index].alt}
+                        className={styles.image}
+                        style={{ objectPosition: images[index].position }}
+                    />
+                </div>
+                <div className={styles.dots}>
+                    {images.map((img, i) => (
+                        <button
+                            key={img.src}
+                            className={`${styles.dot} ${i === index ? styles.active : ''}`}
+                            onClick={() => setIndex(i)}
+                            aria-label={`Show image ${i + 1}`}
+                        />
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+}

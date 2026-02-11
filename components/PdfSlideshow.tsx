@@ -1,0 +1,29 @@
+"use client";
+
+import { useState } from 'react';
+import styles from './PdfSlideshow.module.css';
+
+const pages = Array.from({ length: 12 }, (_, i) =>
+  `/images/env-pdf/2601151_55_McAlpine_Avenue_South_Final- (1).pdf/2601151_55_McAlpine_Avenue_South_Final--${String(i + 1).padStart(2, '0')}.jpg`
+);
+
+export default function PdfSlideshow() {
+  const [index, setIndex] = useState(0);
+  const total = pages.length;
+
+  const prev = () => setIndex((i) => (i - 1 + total) % total);
+  const next = () => setIndex((i) => (i + 1) % total);
+
+  return (
+    <div className={styles.viewer}>
+      <div className={styles.frame}>
+        <img src={pages[index]} alt={`PDF page ${index + 1}`} className={styles.image} />
+      </div>
+      <div className={styles.controls}>
+        <button className={styles.btn} onClick={prev}>Prev</button>
+        <div className={styles.pageText}>Page {index + 1} of {total}</div>
+        <button className={styles.btn} onClick={next}>Next</button>
+      </div>
+    </div>
+  );
+}

@@ -1,0 +1,49 @@
+.viewer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.frame {
+  background: #ffffff;
+  border: 1px solid #d9dee5;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+.btn {
+  background: #0f172a;
+  color: #ffffff;
+  border: none;
+  padding: 0.45rem 0.8rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.pageText {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+@media (max-width: 900px) {
+  .frame {
+    min-height: 320px;
+  }
+}

@@ -1,0 +1,56 @@
+.about {
+  padding: 6rem 1.5rem 3rem;
+  background: #f7f7f8;
+  color: #0f172a;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: clamp(2.2rem, 4vw, 3.1rem);
+  margin-bottom: 1.2rem;
+}
+
+.copy {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #334155;
+  margin-bottom: 1.2rem;
+}
+
+.galleryTitle {
+  margin-top: 2.5rem;
+  font-size: 1.1rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.gallery {
+  margin-top: 1.2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1rem;
+}
+
+.photoWrap {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  padding: 0.4rem;
+}
+
+.photo {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .photo {
+    height: 196px;
+  }
+}

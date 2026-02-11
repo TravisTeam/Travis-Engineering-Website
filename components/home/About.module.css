@@ -1,0 +1,62 @@
+.about {
+    padding: 8rem 0;
+    background-color: var(--color-white);
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.title {
+    font-size: 2.5rem;
+    color: var(--color-secondary);
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+}
+
+.title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-primary);
+}
+
+.textWrapper {
+    color: var(--color-text-light);
+    font-size: 1.125rem;
+    line-height: 1.8;
+    text-align: justify;
+    /* Or left, depending on preference. Justify looks formal. */
+    text-align-last: center;
+    /* Centers the last line if justified */
+}
+
+/* Override text-align-last for better readability on mobile if needed */
+@media (max-width: 768px) {
+    .textWrapper {
+        text-align: left;
+        text-align-last: left;
+    }
+}
+
+.text {
+    margin-bottom: 2rem;
+}
+
+.text:last-child {
+    margin-bottom: 0;
+}

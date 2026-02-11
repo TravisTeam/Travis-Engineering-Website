@@ -1,0 +1,141 @@
+.hero {
+    position: relative;
+    padding-top: 120px;
+    /* Space for fixed header */
+    padding-bottom: 5rem;
+    min-height: 90vh;
+    /* Full viewport height minus header roughly */
+    display: flex;
+    align-items: center;
+    background-color: var(--color-background);
+    overflow: hidden;
+}
+
+.gridBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: 0;
+    pointer-events: none;
+    /* Fade out towards edges or bottom if needed */
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    position: relative;
+    z-index: 1;
+}
+
+@media (min-width: 992px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+}
+
+.content {
+    max-width: 600px;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--color-secondary);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.titleWord {
+    display: inline-block;
+}
+
+@media (min-width: 768px) {
+    .title {
+        font-size: 4rem;
+    }
+}
+
+.subtitle {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.description {
+    font-size: 1.125rem;
+    color: var(--color-text-light);
+    margin-bottom: 2.5rem;
+    max-width: 480px;
+}
+
+.ctaButton {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: 700;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.ctaButton:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-1px);
+}
+
+.imageWrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imageFrame {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 4/3;
+    background-color: #f1f5f9;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    /* "Blueprint" border effect */
+    border: 1px solid rgba(15, 23, 42, 0.1);
+}
+
+.imageFrame::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    border-top: 1px solid var(--color-secondary-light);
+    border-right: 1px solid var(--color-secondary-light);
+    width: 100px;
+    height: 100px;
+    opacity: 0.2;
+}
+
+.heroImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}

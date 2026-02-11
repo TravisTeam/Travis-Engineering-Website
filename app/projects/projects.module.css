@@ -1,0 +1,91 @@
+.page {
+  padding: 6rem 1.5rem 3rem;
+  background: #f7f7f8;
+  color: #0f172a;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: clamp(2.2rem, 4vw, 3.1rem);
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #475569;
+  margin-bottom: 2rem;
+}
+
+.filters {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.filter {
+  background: #ffffff;
+  border: 1px solid #d9dee5;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.filterActive {
+  border-color: #0f172a;
+  box-shadow: inset 3px 0 0 #0f172a;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+}
+
+.imageWrap {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cardBody {
+  padding: 1rem;
+}
+
+.cardTitle {
+  font-size: 1.05rem;
+  margin-bottom: 0.4rem;
+}
+
+.cardAddress {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #0f172a;
+  border: 1px solid #d9dee5;
+  padding: 0.3rem 0.5rem;
+}
