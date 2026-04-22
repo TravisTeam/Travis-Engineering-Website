@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { siteData } from '@/data/siteData';
 import styles from './Header.module.css';
 

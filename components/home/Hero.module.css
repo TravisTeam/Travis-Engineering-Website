@@ -139,3 +139,10 @@
     object-fit: cover;
     display: block;
 }
+
+.betaLabel {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #c0392b;
+    margin: 0 0 1rem 0;
+}

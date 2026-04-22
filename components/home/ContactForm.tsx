@@ -7,7 +7,7 @@ export default function ContactForm() {
     const { form } = siteData.contact;
 
     return (
-        <form className={styles.form}>
+        <form className={styles.form} action="mailto:hello@travisengineering.ca" method="post" encType="text/plain">
             <div className={styles.fieldGroup}>
                 <label htmlFor="name" className={styles.label}>{form.nameLabel}</label>
                 <input type="text" id="name" name="name" className={styles.input} required />

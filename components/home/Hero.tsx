@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { siteData } from '@/data/siteData';
 import styles from './Hero.module.css';
 
@@ -8,6 +7,7 @@ export default function Hero() {
             <div className={styles.gridBackground}></div>
             <div className={styles.container}>
                 <div className={styles.content}>
+                    <p className={styles.betaLabel}>🏗️ This site is currently in beta</p>
                     <h1 className={styles.title}>
                         {siteData.hero.title.split(' ').map((word, i) => (
                             <span key={i} className={styles.titleWord}>{word} </span>
@@ -20,9 +20,7 @@ export default function Hero() {
                     </a>
                 </div>
                 <div className={styles.imageWrapper}>
-                    {/* Using a placeholder div if image is missing, or the image if valid */}
                     <div className={styles.imageFrame}>
-                        {/* The visual style of the reference often has a clean, possibly bordered or framed image */}
                         <img
                             src={siteData.hero.heroImage}
                             alt="Engineering Structure"
