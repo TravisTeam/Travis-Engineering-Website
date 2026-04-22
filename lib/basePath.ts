@@ -1,2 +1,2 @@
-const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+const BASE_PATH = process.env.NODE_ENV === 'production' ? '/Travis-Engineering-Website' : '';
 export default BASE_PATH;
