@@ -2,13 +2,14 @@ import Header from '@/components/home/Header';
 import Contact from '@/components/home/Contact';
 import Footer from '@/components/home/Footer';
 import { siteData } from '@/data/siteData';
+import BASE_PATH from '@/lib/basePath';
 import styles from './about.module.css';
 
 const photos = [
-  '/images/about/01-team.avif',
+  '/images/about/01-team.jpg',
   '/images/about/02-team.jpg',
   '/images/about/03-team.jpg',
-  '/images/about/04-team.png',
+  '/images/about/04-team.jpg',
   '/images/about/05-team.jpg',
   '/images/about/06-team.jpg',
 ];
@@ -28,7 +29,7 @@ export default function AboutPage() {
           <div className={styles.gallery}>
             {photos.map((src, i) => (
               <div key={src} className={styles.photoWrap}>
-                <img src={src} alt={`Team photo ${i + 1}`} className={styles.photo} />
+                <img src={`${BASE_PATH}${src}`} alt={`Team photo ${i + 1}`} className={styles.photo} />
               </div>
             ))}
           </div>

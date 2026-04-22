@@ -3,7 +3,7 @@
 import BASE_PATH from '@/lib/basePath';
 import styles from './PdfSlideshow.module.css';
 
-const pages = ['/images/design-pdf/01.png'];
+const pages = ['/images/design-pdf/01.jpg'];
 
 export default function DesignPdfSlideshow() {
   return (

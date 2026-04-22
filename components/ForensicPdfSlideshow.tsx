@@ -3,7 +3,7 @@
 import BASE_PATH from '@/lib/basePath';
 import styles from './PdfSlideshow.module.css';
 
-const pages = ['/images/forensic-pdf/01.png'];
+const pages = ['/images/forensic-pdf/01.jpg'];
 
 export default function ForensicPdfSlideshow() {
   return (
