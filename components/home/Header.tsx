@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { siteData } from '@/data/siteData';
+import BASE_PATH from '@/lib/basePath';
 import styles from './Header.module.css';
 
 export default function Header() {
@@ -8,7 +9,7 @@ export default function Header() {
             <div className={styles.container}>
                 <div className={styles.logo}>
                     <Link href="/">
-                        <img src="/images/logo.png" alt="Travis Engineering" className={styles.logoImage} />
+                        <img src={`${BASE_PATH}/images/logo.png`} alt="Travis Engineering" className={styles.logoImage} />
                     </Link>
                 </div>
                 <nav className={styles.nav}>

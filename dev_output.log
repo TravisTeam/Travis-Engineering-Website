@@ -1,0 +1,15 @@
+
+> travis-engineering-v3@0.1.0 dev
+> next dev
+
+⚠ Port 3000 is in use by an unknown process, using available port 3001 instead.
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3001
+- Network:       http://192.168.40.213:3001
+
+✓ Starting...
+✓ Ready in 447ms
+ GET / 200 in 359ms (compile: 182ms, render: 176ms)
+ GET / 200 in 57ms (compile: 3ms, render: 54ms)
+ GET / 200 in 43ms (compile: 3ms, render: 40ms)
+ GET /services/damage-assessments 200 in 67ms (compile: 33ms, render: 34ms)

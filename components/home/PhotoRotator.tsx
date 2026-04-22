@@ -1,14 +1,15 @@
 "use client";
 
 import { useEffect, useState } from 'react';
+import BASE_PATH from '@/lib/basePath';
 import styles from './PhotoRotator.module.css';
 
 const images = [
-    { src: '/images/rotator/01-travis-construction.png', alt: 'Travis construction', position: 'left center' },
-    { src: '/images/rotator/02-guy-travis-logo.png', alt: 'Travis logo on worker', position: 'left center' },
-    { src: '/images/rotator/03-drawing-stock.png', alt: 'Drafting stock photo', position: 'center' },
-    { src: '/images/rotator/04-close-inspecting.png', alt: 'Close inspecting', position: 'center' },
-    { src: '/images/rotator/05-travis-worker.png', alt: 'Travis worker', position: 'center' },
+    { src: `${BASE_PATH}/images/rotator/01-travis-construction.png`, alt: 'Travis construction', position: 'left center' },
+    { src: `${BASE_PATH}/images/rotator/02-guy-travis-logo.png`, alt: 'Travis logo on worker', position: 'left center' },
+    { src: `${BASE_PATH}/images/rotator/03-drawing-stock.png`, alt: 'Drafting stock photo', position: 'center' },
+    { src: `${BASE_PATH}/images/rotator/04-close-inspecting.png`, alt: 'Close inspecting', position: 'center' },
+    { src: `${BASE_PATH}/images/rotator/05-travis-worker.png`, alt: 'Travis worker', position: 'center' },
 ];
 
 export default function PhotoRotator() {

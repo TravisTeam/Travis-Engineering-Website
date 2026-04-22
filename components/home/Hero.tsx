@@ -1,4 +1,5 @@
 import { siteData } from '@/data/siteData';
+import BASE_PATH from '@/lib/basePath';
 import styles from './Hero.module.css';
 
 export default function Hero() {
@@ -22,7 +23,7 @@ export default function Hero() {
                 <div className={styles.imageWrapper}>
                     <div className={styles.imageFrame}>
                         <img
-                            src={siteData.hero.heroImage}
+                            src={`${BASE_PATH}${siteData.hero.heroImage}`}
                             alt="Engineering Structure"
                             className={styles.heroImage}
                         />

@@ -1,5 +1,6 @@
 "use client";
 
+import BASE_PATH from '@/lib/basePath';
 import styles from './LogoSlider.module.css';
 
 const logos = [
@@ -28,7 +29,7 @@ export default function LogoSlider() {
         {items.map((name, i) => (
           <div key={`${name}-${i}`} className={styles.logoWrap}>
             <img
-              src={`/images/clients/logos/${name}`}
+              src={`${BASE_PATH}/images/clients/logos/${name}`}
               alt={name}
               className={styles.logo}
             />

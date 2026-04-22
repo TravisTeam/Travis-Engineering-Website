@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react';
 import Header from '@/components/home/Header';
 import Contact from '@/components/home/Contact';
 import Footer from '@/components/home/Footer';
+import BASE_PATH from '@/lib/basePath';
 import styles from './projects.module.css';
 
 const projects = [
@@ -90,7 +91,7 @@ export default function ProjectsPage() {
             {visible.map(project => (
               <div key={project.title} className={styles.card}>
                 <div className={styles.imageWrap}>
-                  <img src={project.image} alt={project.title} className={styles.image} />
+                  <img src={`${BASE_PATH}${project.image}`} alt={project.title} className={styles.image} />
                 </div>
                 <div className={styles.cardBody}>
                   <h3 className={styles.cardTitle}>{project.title}</h3>

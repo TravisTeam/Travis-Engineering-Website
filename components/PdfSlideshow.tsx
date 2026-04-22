@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from 'react';
+import BASE_PATH from '@/lib/basePath';
 import styles from './PdfSlideshow.module.css';
 
 const pages = Array.from({ length: 12 }, (_, i) =>
@@ -17,7 +18,7 @@ export default function PdfSlideshow() {
   return (
     <div className={styles.viewer}>
       <div className={styles.frame}>
-        <img src={pages[index]} alt={`PDF page ${index + 1}`} className={styles.image} />
+        <img src={`${BASE_PATH}${pages[index]}`} alt={`PDF page ${index + 1}`} className={styles.image} />
       </div>
       <div className={styles.controls}>
         <button className={styles.btn} onClick={prev}>Prev</button>
