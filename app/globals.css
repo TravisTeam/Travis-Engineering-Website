@@ -3,7 +3,7 @@
     --border-radius: 4px;
 
     /* Brand Colors */
-    --color-primary: #00B4D8;
+    --color-primary: #0097B0;
     /* Cool Cyan */
     --color-primary-dark: #0096B4;
     --color-secondary: #0F172A;
@@ -17,7 +17,7 @@
     --color-white: #FFFFFF;
 
     /* Blueprint Grid */
-    --grid-color: rgba(0, 180, 216, 0.1);
+    --grid-color: rgba(0, 151, 176, 0.1);
 }
 
 * {
