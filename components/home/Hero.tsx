@@ -8,7 +8,7 @@ export default function Hero() {
             <div className={styles.gridBackground}></div>
             <div className={styles.container}>
                 <div className={styles.content}>
-                    <p className={styles.betaLabel}>This site is currently in beta</p>
+                    <p className={styles.betaLabel}>This site is currently in beta 🏗️</p>
                     <h1 className={styles.title}>
                         {siteData.hero.title.split(' ').map((word, i) => (
                             <span key={i} className={styles.titleWord}>{word} </span>
