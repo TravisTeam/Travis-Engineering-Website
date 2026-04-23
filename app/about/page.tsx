@@ -1,6 +1,7 @@
 import Header from '@/components/home/Header';
 import Contact from '@/components/home/Contact';
 import Footer from '@/components/home/Footer';
+import BackToHomeButton from '@/components/BackToHomeButton';
 import { siteData } from '@/data/siteData';
 import BASE_PATH from '@/lib/basePath';
 import styles from './about.module.css';
@@ -20,6 +21,7 @@ export default function AboutPage() {
       <Header />
       <section className={styles.about}>
         <div className={styles.container}>
+          <BackToHomeButton />
           <h1 className={styles.title}>About Us</h1>
           {siteData.about.content.split('\n\n').map((p, i) => (
             <p key={i} className={styles.copy}>{p}</p>

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Header from '@/components/home/Header';
 import Contact from '@/components/home/Contact';
 import Footer from '@/components/home/Footer';
+import BackToHomeButton from '@/components/BackToHomeButton';
 import ForensicPdfSlideshow from '@/components/ForensicPdfSlideshow';
 import styles from '../engineering-design/engineering-design.module.css';
 
@@ -74,6 +75,7 @@ export default function ForensicEngineeringPage() {
       <Header />
       <section className={styles.page}>
         <div className={styles.container}>
+          <BackToHomeButton />
           <div className={styles.grid}>
             <div>
               <h1 className={styles.title}>Forensic Engineering</h1>

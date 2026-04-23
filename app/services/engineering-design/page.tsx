@@ -1,6 +1,7 @@
 import Header from '@/components/home/Header';
 import Contact from '@/components/home/Contact';
 import Footer from '@/components/home/Footer';
+import BackToHomeButton from '@/components/BackToHomeButton';
 import DesignPdfSlideshow from '@/components/DesignPdfSlideshow';
 import styles from './engineering-design.module.css';
 
@@ -18,6 +19,7 @@ export default function EngineeringDesignPage() {
       <Header />
       <section className={styles.page}>
         <div className={styles.container}>
+          <BackToHomeButton />
           <div className={styles.grid}>
             <div>
               <h1 className={styles.title}>Engineering Design Services</h1>

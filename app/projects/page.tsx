@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react';
 import Header from '@/components/home/Header';
 import Contact from '@/components/home/Contact';
 import Footer from '@/components/home/Footer';
+import BackToHomeButton from '@/components/BackToHomeButton';
 import BASE_PATH from '@/lib/basePath';
 import styles from './projects.module.css';
 
@@ -72,6 +73,7 @@ export default function ProjectsPage() {
       <Header />
       <section className={styles.page}>
         <div className={styles.container}>
+          <BackToHomeButton />
           <h1 className={styles.title}>Projects</h1>
           <p className={styles.subtitle}>Browse our work by category.</p>
 

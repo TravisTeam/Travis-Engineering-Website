@@ -1,0 +1,33 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 1.5rem;
+  padding: 0.72rem 1.15rem;
+  border-radius: 999px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1;
+  box-shadow: 0 10px 24px rgba(0, 180, 216, 0.18);
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(0, 150, 180, 0.22);
+}
+
+.arrow {
+  font-size: 1rem;
+}
+
+@media (max-width: 640px) {
+  .button {
+    width: fit-content;
+    margin-bottom: 1.25rem;
+  }
+}

@@ -1,6 +1,7 @@
 import Header from '@/components/home/Header';
 import Contact from '@/components/home/Contact';
 import Footer from '@/components/home/Footer';
+import BackToHomeButton from '@/components/BackToHomeButton';
 import DamagePdfSlideshow from '@/components/DamagePdfSlideshow';
 import styles from '../engineering-design/engineering-design.module.css';
 
@@ -18,6 +19,7 @@ export default function DamageAssessmentsPage() {
       <Header />
       <section className={styles.page}>
         <div className={styles.container}>
+          <BackToHomeButton />
           <div className={styles.grid}>
             <div>
               <h1 className={styles.title}>Damage Assessments</h1>
