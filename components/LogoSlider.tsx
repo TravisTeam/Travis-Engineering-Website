@@ -4,21 +4,21 @@ import BASE_PATH from '@/lib/basePath';
 import styles from './LogoSlider.module.css';
 
 const logos = [
-  'Eagle View.png',
-  'Hover Logo.png',
-  'Logo_of_Thorold,_Ontario.svg.png',
-  'MAX Insuance.png',
-  'PRO-Lab-2C-noTag.png',
-  'Roofr_Logo.jpg',
-  'Toronto  logo design.png',
-  'Toronto_Public_Library_Logo.png',
-  'WTI_Pure-Air_Logo_Sticky.png',
   'allstate-logo.png',
+  'Co-operators-New-Logo.png',
+  'EagleView-Full-Color-Vertical.svg',
   'emsl_analytical_inc_logo.jpg',
-  'gnc-logo.png',
+  'Hover Logo.png',
   'internachi-Logo.png',
+  'Logo_of_Thorold,_Ontario.svg.png',
+  'Max Insurance.jpg',
+  'PRO-Lab-2C-noTag.png',
   'puroclean-logo.png',
+  'Roofr_Logo.jpg',
+  'Toronto,_City_of.svg',
+  'Toronto_Public_Library_Logo.png',
   'tremco-logo.png',
+  'WTI_Pure-Air_Logo_Sticky.png',
 ];
 
 export default function LogoSlider() {
@@ -29,7 +29,7 @@ export default function LogoSlider() {
         {items.map((name, i) => (
           <div key={`${name}-${i}`} className={styles.logoWrap}>
             <img
-              src={`${BASE_PATH}/images/clients/logos/${name}`}
+              src={`${BASE_PATH}/images/logos/${name}`}
               alt={name}
               className={styles.logo}
             />
