@@ -1,7 +1,8 @@
 .contact {
     padding: 6rem 0;
-    /* Using background dots/grid or plain white based on preference. Sticking to simple for now. */
-    background-color: var(--color-white);
+    background: transparent;
+    position: relative;
+    z-index: 2;
 }
 
 .container {
@@ -24,6 +25,9 @@
     gap: 4rem;
     max-width: 1000px;
     margin: 0 auto;
+    background: #ffffff;
+    padding: 3rem;
+    border-radius: 4px;
 }
 
 .sectionTitle {

@@ -12,7 +12,7 @@ interface Dot {
 }
 
 const SPACING = 38       // grid spacing in px
-const RADIUS = 1.8       // dot size
+const RADIUS = 1.5       // dot size
 const REPEL_RADIUS = 90  // mouse influence radius
 const REPEL_STRENGTH = 6
 const SPRING = 0.06      // how fast dots return home
@@ -73,7 +73,7 @@ export default function ParticleBackground() {
       const mx = mouseRef.current.x
       const my = mouseRef.current.y
 
-      ctx.fillStyle = 'rgba(15, 23, 42, 0.22)'
+      ctx.fillStyle = 'rgba(15, 23, 42, 0.09)'
 
       dotsRef.current.forEach((d) => {
         // Spring back to home
@@ -122,7 +122,7 @@ export default function ParticleBackground() {
         width: '100%',
         height: '100%',
         pointerEvents: 'none',
-        zIndex: 10,
+        zIndex: 1,
       }}
     />
   )

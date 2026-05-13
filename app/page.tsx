@@ -13,7 +13,7 @@ export default function Home() {
             <Header />
             <Hero />
             <LogoSlider />
-            <div style={{ position: 'relative' }}>
+            <div style={{ position: 'relative', background: '#f7f7f8' }}>
                 <ParticleBackground />
                 <Services />
                 <ServiceAreasMap />

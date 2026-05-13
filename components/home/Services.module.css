@@ -1,7 +1,8 @@
 .services {
     padding: 6rem 0;
-    background-color: var(--color-background-alt);
+    background: transparent;
     position: relative;
+    z-index: 2;
 }
 
 .container {
@@ -43,7 +44,7 @@
     cursor: pointer;
     outline: none;
     position: relative;
-    /* Manage outline via focus-visible */
+    z-index: 2;
 }
 
 .card:hover,
