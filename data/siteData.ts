@@ -124,8 +124,22 @@ export const siteData = {
                 icon: "clipboard-check",
             },
             {
-                id: "travis-academy",
+                id: "mapping-diagnostics",
                 number: "08",
+                title: "MAPPING & DIAGNOSTICS",
+                description: "High-resolution 3D scanning and photogrammetric capture for forensic documentation, structural diagnostics, and site mapping. We deliver accurate, navigable digital twins of any structure or scene.",
+                icon: "leaf",
+                subServices: [
+                    { id: "3d-scanning", name: "3D Photogrammetry" },
+                    { id: "digital-twin", name: "Digital Twin Capture" },
+                    { id: "structural-mapping", name: "Structural Mapping" },
+                    { id: "forensic-documentation", name: "Forensic Documentation" },
+                    { id: "site-reconstruction", name: "Site Reconstruction" },
+                ]
+            },
+            {
+                id: "travis-academy",
+                number: "09",
                 title: "TRAVIS ACADEMY",
                 description: "Travis Academy offers structured education and certification programs for inspectors and industry partners, helping participants gain practical field skills, program credits, and professional support through the TRAVIS network.",
                 icon: "search",
