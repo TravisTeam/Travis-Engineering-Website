@@ -12,6 +12,7 @@ interface ServiceCardProps {
         number: string;
         title: string;
         description: string;
+        externalUrl?: string;
         subServices?: { id: string; name: string }[];
     };
     IconComponent: React.ComponentType<any>;
@@ -28,14 +29,20 @@ export default function ServiceCard({ service, IconComponent }: ServiceCardProps
         iconRef.current?.stopAnimation();
     };
 
+    const href = service.externalUrl ?? `/services/${service.id}`;
+    const externalProps = service.externalUrl
+        ? { target: '_blank', rel: 'noopener noreferrer' }
+        : {};
+
     return (
         <Link
-            href={`/services/${service.id}`}
+            href={href}
             className={styles.card}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onFocus={handleMouseEnter}
             onBlur={handleMouseLeave}
+            {...externalProps}
         >
             <div className={styles.cardHeader}>
                 <span className={styles.number}>{service.number}</span>

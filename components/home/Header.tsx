@@ -16,9 +16,15 @@ export default function Header() {
                     <ul className={styles.navList}>
                         {siteData.header.navItems.map((item) => (
                             <li key={item.label} className={styles.navItem}>
-                                <Link href={item.href} className={styles.navLink}>
-                                    {item.label}
-                                </Link>
+                                {item.href.startsWith('http') ? (
+                                    <a href={item.href} className={styles.navLink} target="_blank" rel="noopener noreferrer">
+                                        {item.label}
+                                    </a>
+                                ) : (
+                                    <Link href={item.href} className={styles.navLink}>
+                                        {item.label}
+                                    </Link>
+                                )}
                             </li>
                         ))}
                     </ul>

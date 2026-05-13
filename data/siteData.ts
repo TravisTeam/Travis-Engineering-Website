@@ -4,6 +4,7 @@ export interface ServiceCategory {
     title: string;
     description: string;
     icon: string;
+    externalUrl?: string;
     subServices?: { id: string; name: string }[];
 }
 
@@ -30,6 +31,7 @@ export const siteData = {
         navItems: [
             { label: "Projects", href: "/projects" },
             { label: "Services", href: "/#services" },
+            { label: "Travis Academy", href: "https://travisstormteam.ca/#" },
             { label: "About", href: "/about" },
             { label: "Contact Us", href: "/contactus" },
         ],
@@ -112,6 +114,22 @@ export const siteData = {
                     { id: "grain-towers", name: "Grain Towers" },
                     { id: "electrical", name: "Electrical" },
                     { id: "thermal", name: "Thermal Inspections" },
+                ]
+            },
+            {
+                id: "travis-academy",
+                number: "07",
+                title: "TRAVIS ACADEMY",
+                description: "Travis Academy offers structured education and certification programs for inspectors and industry partners, helping participants gain practical field skills, program credits, and professional support through the TRAVIS network.",
+                icon: "search",
+                externalUrl: "https://travisstormteam.ca/#",
+                subServices: [
+                    { id: "education-certificate", name: "Education certificate" },
+                    { id: "program-credits", name: "Program credits" },
+                    { id: "member-discounts", name: "Member discounts" },
+                    { id: "digital-certificate", name: "Digital certificate" },
+                    { id: "elite-member-id", name: "ELITE member ID card" },
+                    { id: "more", name: "More to come…" },
                 ]
             },
         ] as ServiceCategory[],
