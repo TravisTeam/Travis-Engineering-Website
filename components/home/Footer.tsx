@@ -14,6 +14,18 @@ export default function Footer() {
                     </div>
 
                     <div className={styles.column}>
+                        <h4 className={styles.subHeading}>Offices</h4>
+                        {siteData.contact.addresses.map((addr) => (
+                            <div key={addr.province} className={styles.addressBlock}>
+                                <div className={styles.province}>{addr.province}</div>
+                                {addr.lines.map((line, i) => (
+                                    <p key={i} className={styles.text}>{line}</p>
+                                ))}
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className={styles.column}>
                         <h4 className={styles.subHeading}>Links</h4>
                         {siteData.header.navItems.map(item => (
                             <a key={item.label} href={item.href} className={styles.link}>{item.label}</a>

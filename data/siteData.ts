@@ -170,14 +170,20 @@ export const siteData = {
     contact: {
         title: "Get In Touch",
         infoTitle: "Contact Information",
-        address: {
-            label: "ADDRESS",
-            lines: [
-                "1670 North Service Rd E",
-                "Suite 207, Oakville, ON",
-                "L6H 7G3"
-            ]
-        },
+        addresses: [
+            {
+                province: "Ontario",
+                lines: ["1670 North Service Rd E", "Suite 207, Oakville, ON L6H 7G3"],
+            },
+            {
+                province: "Alberta",
+                lines: ["4030 8 Street SE", "Calgary, AB T2G 3A7"],
+            },
+            {
+                province: "British Columbia",
+                lines: ["780 Tolmie Avenue Building #3", "Victoria, BC V8X 3W4"],
+            },
+        ],
         phone: {
             label: "PHONE",
             number: "1-888-733-9940"
@@ -206,7 +212,7 @@ export const siteData = {
         { name: "Toronto Public Library", logoPath: "/images/logos/Toronto_Public_Library_Logo.png" },
     ],
     footer: {
-        address: "1670 North Service Rd E, Suite 207, Oakville, ON L6H 7G3",
+        address: "Oakville · Calgary · Victoria",
         phone: "1-888-733-9940",
         website: "Travisengineering.ca",
         projectInfo: "PROJECT: TORONTO PUBLIC LIBRARY - GOLDHAWK PARK BRANCH",

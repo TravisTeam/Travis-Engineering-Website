@@ -36,14 +36,17 @@ export default function Contact() {
                             </div>
                         </div>
 
-                        {/* Address */}
+                        {/* Addresses */}
                         <div className={styles.item}>
-                            <h4 className={styles.label}>{contact.address.label}</h4>
-                            <div className={styles.value}>
-                                {contact.address.lines.map((line, index) => (
-                                    <div key={index}>{line}</div>
-                                ))}
-                            </div>
+                            <h4 className={styles.label}>OFFICES</h4>
+                            {contact.addresses.map((addr) => (
+                                <div key={addr.province} className={styles.addressBlock}>
+                                    <div className={styles.province}>{addr.province}</div>
+                                    {addr.lines.map((line, i) => (
+                                        <div key={i} className={styles.value}>{line}</div>
+                                    ))}
+                                </div>
+                            ))}
                         </div>
 
                         {/* Service Areas */}

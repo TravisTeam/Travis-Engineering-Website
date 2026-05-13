@@ -51,6 +51,19 @@
     color: var(--color-white);
 }
 
+.addressBlock {
+    margin-bottom: 1.2rem;
+}
+
+.province {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: 0.2rem;
+}
+
 .bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 2rem;

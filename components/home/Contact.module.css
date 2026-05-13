@@ -65,6 +65,19 @@
     color: var(--color-primary);
 }
 
+.addressBlock {
+    margin-bottom: 1rem;
+}
+
+.province {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: 0.2rem;
+}
+
 .description {
     color: var(--color-text-light);
     font-size: 0.95rem;
