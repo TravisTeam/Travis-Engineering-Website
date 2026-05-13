@@ -118,14 +118,14 @@ export const siteData = {
             },
             {
                 id: "projects",
-                number: "08",
+                number: "07",
                 title: "PROJECTS",
                 description: "Explore our portfolio of completed engineering and consulting projects across Canada. From forensic investigations to structural assessments and environmental studies, our work speaks to the breadth and quality of the TRAVIS standard.",
                 icon: "clipboard-check",
             },
             {
                 id: "travis-academy",
-                number: "07",
+                number: "08",
                 title: "TRAVIS ACADEMY",
                 description: "Travis Academy offers structured education and certification programs for inspectors and industry partners, helping participants gain practical field skills, program credits, and professional support through the TRAVIS network.",
                 icon: "search",
