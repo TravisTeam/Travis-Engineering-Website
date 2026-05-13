@@ -5,6 +5,9 @@ import styles from './LogoSlider.module.css';
 
 const logos = [
   'allstate-logo.png',
+  'wawanesa-insurance.svg',
+  'resolve-quantum.png',
+  'gnc-logo.jpg',
   'Co-operators-New-Logo.png',
   'EagleView-Full-Color-Vertical.svg',
   'emsl_analytical_inc_logo.jpg',
