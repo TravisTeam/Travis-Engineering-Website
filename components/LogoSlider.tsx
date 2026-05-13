@@ -24,20 +24,28 @@ const logos = [
   'WTI_Pure-Air_Logo_Sticky.png',
 ];
 
+function LogoSet() {
+  return (
+    <div className={styles.set}>
+      {logos.map((name) => (
+        <div key={name} className={styles.logoWrap}>
+          <img
+            src={`${BASE_PATH}/images/logos/${name}`}
+            alt={name}
+            className={styles.logo}
+          />
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export default function LogoSlider() {
-  const items = [...logos, ...logos];
   return (
     <section className={styles.section}>
       <div className={styles.track}>
-        {items.map((name, i) => (
-          <div key={`${name}-${i}`} className={styles.logoWrap}>
-            <img
-              src={`${BASE_PATH}/images/logos/${name}`}
-              alt={name}
-              className={styles.logo}
-            />
-          </div>
-        ))}
+        <LogoSet />
+        <LogoSet />
       </div>
     </section>
   );

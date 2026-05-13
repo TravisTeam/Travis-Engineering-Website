@@ -8,10 +8,15 @@
 
 .track {
   display: flex;
-  gap: 2.5rem;
-  align-items: center;
   animation: scroll 30s linear infinite;
   width: max-content;
+}
+
+.set {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+  padding-right: 2.5rem;
 }
 
 .logoWrap {
