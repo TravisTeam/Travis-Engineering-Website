@@ -7,7 +7,7 @@ const logos = [
   'allstate-logo.png',
   'wawanesa-insurance.svg',
   'resolve-quantum.png',
-  'gnc-logo.jpg',
+  'gnc-logo.png',
   'Co-operators-New-Logo.png',
   'EagleView-Full-Color-Vertical.svg',
   'emsl_analytical_inc_logo.jpg',
