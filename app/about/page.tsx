@@ -7,12 +7,12 @@ import BASE_PATH from '@/lib/basePath';
 import styles from './about.module.css';
 
 const photos = [
-  '/images/about/01-team.jpg',
-  '/images/about/02-team.jpg',
-  '/images/about/03-team.jpg',
-  '/images/about/04-team.jpg',
-  '/images/about/05-team.jpg',
-  '/images/about/06-team.jpg',
+  { src: '/images/about/01-team.jpg', alt: 'Travis team' },
+  { src: '/images/about/03-team.jpg', alt: 'Travis team' },
+  { src: '/images/about/04-team.jpg', alt: 'Travis team' },
+  { src: '/images/about/07-award-presentation.jpg', alt: 'Travis Certified Elite award presentation' },
+  { src: '/images/about/08-asos-awos.jpg', alt: 'ASOS AWOS tower presentation' },
+  { src: '/images/about/09-tremco-group.jpg', alt: 'Tremco group photo' },
 ];
 
 export default function AboutPage() {
@@ -29,9 +29,9 @@ export default function AboutPage() {
 
           <div className={styles.galleryTitle}>Our Team</div>
           <div className={styles.gallery}>
-            {photos.map((src, i) => (
-              <div key={src} className={styles.photoWrap}>
-                <img src={`${BASE_PATH}${src}`} alt={`Team photo ${i + 1}`} className={styles.photo} />
+            {photos.map((photo) => (
+              <div key={photo.src} className={styles.photoWrap}>
+                <img src={`${BASE_PATH}${photo.src}`} alt={photo.alt} className={styles.photo} />
               </div>
             ))}
           </div>
