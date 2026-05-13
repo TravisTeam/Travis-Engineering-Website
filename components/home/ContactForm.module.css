@@ -62,3 +62,25 @@
 .submitButton:active {
     transform: translateY(1px);
 }
+
+.submitButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.successMessage {
+    padding: 2rem;
+    background: #f0fdf4;
+    border: 1px solid #86efac;
+    border-radius: var(--border-radius);
+    color: #166534;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.errorMessage {
+    color: #dc2626;
+    font-size: 0.9rem;
+    margin: 0;
+}
