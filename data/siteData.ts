@@ -117,11 +117,19 @@ export const siteData = {
                 ]
             },
             {
-                id: "projects",
+                id: "travis-applied-intelligence",
                 number: "07",
-                title: "PROJECTS",
-                description: "Explore our portfolio of completed engineering and consulting projects across Canada. From forensic investigations to structural assessments and environmental studies, our work speaks to the breadth and quality of the TRAVIS standard.",
-                icon: "projects",
+                title: "TRAVIS APPLIED INTELLIGENCE",
+                description: "AI, automation, and digital engineering solutions for the built environment.",
+                icon: "ai",
+                subServices: [
+                    { id: "ai-workflow", name: "AI workflow automation" },
+                    { id: "digital-engineering", name: "Digital engineering support" },
+                    { id: "data-reporting", name: "Data-driven reporting" },
+                    { id: "smart-docs", name: "Smart documentation tools" },
+                    { id: "process-optimization", name: "Process optimization" },
+                    { id: "built-env-tech", name: "Built environment technology" },
+                ]
             },
             {
                 id: "mapping-diagnostics",

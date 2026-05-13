@@ -9,9 +9,9 @@ import PenIcon from '@/components/ui/icons/pen-icon';
 import GlobeIcon from '@/components/ui/icons/globe-icon';
 import RoofMagnifierIcon from '@/components/ui/icons/roof-magnifier-icon';
 import DroneCameraIcon from '@/components/ui/icons/drone-camera-icon';
-import ProjectsIcon from '@/components/ui/icons/projects-icon';
 import MapIcon from '@/components/ui/icons/map-icon';
 import AcademyIcon from '@/components/ui/icons/academy-icon';
+import AiIcon from '@/components/ui/icons/ai-icon';
 
 // Map icon strings from siteData to Components
 const IconMap: { [key: string]: any } = {
@@ -21,9 +21,9 @@ const IconMap: { [key: string]: any } = {
     'leaf': GlobeIcon,
     'home': RoofMagnifierIcon,
     'drone': DroneCameraIcon,
-    'projects': ProjectsIcon,
     'map': MapIcon,
     'academy': AcademyIcon,
+    'ai': AiIcon,
 };
 
 export default function Services() {
