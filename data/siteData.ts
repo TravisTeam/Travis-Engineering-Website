@@ -117,6 +117,13 @@ export const siteData = {
                 ]
             },
             {
+                id: "projects",
+                number: "08",
+                title: "PROJECTS",
+                description: "Explore our portfolio of completed engineering and consulting projects across Canada. From forensic investigations to structural assessments and environmental studies, our work speaks to the breadth and quality of the TRAVIS standard.",
+                icon: "clipboard-check",
+            },
+            {
                 id: "travis-academy",
                 number: "07",
                 title: "TRAVIS ACADEMY",

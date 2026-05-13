@@ -29,7 +29,7 @@ export default function ServiceCard({ service, IconComponent }: ServiceCardProps
         iconRef.current?.stopAnimation();
     };
 
-    const href = service.externalUrl ?? `/services/${service.id}`;
+    const href = service.externalUrl ?? (service.id === 'projects' ? '/projects' : `/services/${service.id}`);
     const externalProps = service.externalUrl
         ? { target: '_blank', rel: 'noopener noreferrer' }
         : {};
