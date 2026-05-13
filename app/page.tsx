@@ -5,6 +5,7 @@ import Services from '@/components/home/Services';
 import ServiceAreasMap from '@/components/home/ServiceAreasMap';
 import Contact from '@/components/home/Contact';
 import Footer from '@/components/home/Footer';
+import ParticleBackground from '@/components/ParticleBackground';
 
 export default function Home() {
     return (
@@ -12,10 +13,13 @@ export default function Home() {
             <Header />
             <Hero />
             <LogoSlider />
-            <Services />
-            <ServiceAreasMap />
-            <Contact />
-            <Footer />
+            <div style={{ position: 'relative' }}>
+                <ParticleBackground />
+                <Services />
+                <ServiceAreasMap />
+                <Contact />
+                <Footer />
+            </div>
         </main>
     );
 }
