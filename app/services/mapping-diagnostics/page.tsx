@@ -10,14 +10,14 @@ import scanStyles from './mapping-diagnostics.module.css';
 
 const scans = [
   {
-    id: 'scan-2',
-    label: 'Scan 02',
-    embedUrl: 'https://poly.cam/capture/7beb9efa-f0d9-4d98-baa8-9e934872e6fc/embed',
-  },
-  {
     id: 'scan-1',
     label: 'Scan 01',
-    embedUrl: 'https://poly.cam/capture/877bad85-594c-4191-9295-ac6dd330dc50/embed',
+    embedUrl: 'https://3dviewer.dji.com/s/2ba86113-aea8-4dc8-bc6a-033644ead6a1',
+  },
+  {
+    id: 'scan-2',
+    label: 'Scan 02',
+    embedUrl: 'https://3dviewer.dji.com/s/2b197242-9fa0-48e6-943b-34d6a8f3d894',
   },
 ];
 
@@ -87,7 +87,7 @@ export default function MappingDiagnosticsPage() {
                 <iframe
                   key={activeScan.id}
                   src={activeScan.embedUrl}
-                  title={`Polycam 3D capture — ${activeScan.label}`}
+                  title={`DJI 3D capture — ${activeScan.label}`}
                   style={{
                     position: 'absolute',
                     inset: 0,
