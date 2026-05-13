@@ -1,8 +1,25 @@
+"use client";
+
+import { useState } from 'react';
 import Header from '@/components/home/Header';
 import Contact from '@/components/home/Contact';
 import Footer from '@/components/home/Footer';
 import BackToHomeButton from '@/components/BackToHomeButton';
 import styles from '../engineering-design/engineering-design.module.css';
+import scanStyles from './mapping-diagnostics.module.css';
+
+const scans = [
+  {
+    id: 'scan-2',
+    label: 'Scan 02',
+    embedUrl: 'https://poly.cam/capture/7beb9efa-f0d9-4d98-baa8-9e934872e6fc/embed',
+  },
+  {
+    id: 'scan-1',
+    label: 'Scan 01',
+    embedUrl: 'https://poly.cam/capture/877bad85-594c-4191-9295-ac6dd330dc50/embed',
+  },
+];
 
 const capabilities = [
   '3D photogrammetry and point-cloud capture',
@@ -13,6 +30,8 @@ const capabilities = [
 ];
 
 export default function MappingDiagnosticsPage() {
+  const [activeScan, setActiveScan] = useState(scans[0]);
+
   return (
     <main>
       <Header />
@@ -40,7 +59,23 @@ export default function MappingDiagnosticsPage() {
             </div>
 
             <div>
-              <div className={styles.capabilitiesTitle}>Sample 3D Capture</div>
+              <div className={scanStyles.viewerHeader}>
+                <div className={styles.capabilitiesTitle} style={{ marginBottom: 0 }}>
+                  Sample 3D Captures
+                </div>
+                <div className={scanStyles.scanTabs}>
+                  {scans.map((scan) => (
+                    <button
+                      key={scan.id}
+                      className={`${scanStyles.scanTab} ${activeScan.id === scan.id ? scanStyles.scanTabActive : ''}`}
+                      onClick={() => setActiveScan(scan)}
+                    >
+                      {scan.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
               <div style={{
                 position: 'relative',
                 width: '100%',
@@ -50,8 +85,9 @@ export default function MappingDiagnosticsPage() {
                 overflow: 'hidden',
               }}>
                 <iframe
-                  src="https://poly.cam/capture/877bad85-594c-4191-9295-ac6dd330dc50/embed"
-                  title="Polycam 3D capture viewer"
+                  key={activeScan.id}
+                  src={activeScan.embedUrl}
+                  title={`Polycam 3D capture — ${activeScan.label}`}
                   style={{
                     position: 'absolute',
                     inset: 0,

@@ -1,0 +1,42 @@
+.viewerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.scanTabs {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.scanTab {
+  padding: 0.4rem 1rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid #d9dee5;
+  background: #ffffff;
+  color: #64748b;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s, box-shadow 0.15s;
+}
+
+.scanTab:hover {
+  border-color: #9aa6b2;
+  color: #1f2937;
+  background: #f7f9fb;
+}
+
+.scanTabActive {
+  background: #1f2937;
+  color: #ffffff;
+  border-color: #1f2937;
+  box-shadow: none;
+}
+
+.scanTabActive:hover {
+  background: #1f2937;
+  color: #ffffff;
+  border-color: #1f2937;
+}
