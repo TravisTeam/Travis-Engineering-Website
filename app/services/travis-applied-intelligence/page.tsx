@@ -50,8 +50,8 @@ export default function TravisAppliedIntelligencePage() {
                 style={{ minHeight: 500, alignItems: 'stretch' }}
               >
                 <img
-                  src={`${BASE_PATH}/images/rotator/04-close-inspecting.jpg`}
-                  alt="Travis Applied Intelligence"
+                  src={`${BASE_PATH}/images/travis-ai-drone-inspection-report.jpg`}
+                  alt="Travis AI drone inspection report"
                   className={styles.viewerImage}
                   style={{ objectFit: 'cover', objectPosition: 'center' }}
                 />
