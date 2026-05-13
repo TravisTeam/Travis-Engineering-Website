@@ -2,17 +2,25 @@
 
 import { useEffect, useRef } from 'react'
 
-interface Particle {
+interface Dot {
+  homeX: number
+  homeY: number
   x: number
   y: number
   vx: number
   vy: number
-  radius: number
 }
+
+const SPACING = 38       // grid spacing in px
+const RADIUS = 1.8       // dot size
+const REPEL_RADIUS = 90  // mouse influence radius
+const REPEL_STRENGTH = 6
+const SPRING = 0.06      // how fast dots return home
+const DAMPING = 0.78     // velocity decay
 
 export default function ParticleBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const particlesRef = useRef<Particle[]>([])
+  const dotsRef = useRef<Dot[]>([])
   const mouseRef = useRef({ x: -9999, y: -9999 })
   const animationRef = useRef<number>(0)
 
@@ -26,22 +34,26 @@ export default function ParticleBackground() {
 
     const parent = canvas.parentElement!
 
+    const buildGrid = (w: number, h: number): Dot[] => {
+      const dots: Dot[] = []
+      const cols = Math.floor(w / SPACING)
+      const rows = Math.floor(h / SPACING)
+      const offsetX = (w - (cols - 1) * SPACING) / 2
+      const offsetY = SPACING
+      for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < cols; c++) {
+          const hx = offsetX + c * SPACING
+          const hy = offsetY + r * SPACING
+          dots.push({ homeX: hx, homeY: hy, x: hx, y: hy, vx: 0, vy: 0 })
+        }
+      }
+      return dots
+    }
+
     const resizeCanvas = () => {
       canvas.width = parent.offsetWidth
       canvas.height = parent.offsetHeight
-      // Reinitialise so particles fill the new size
-      particlesRef.current = makeParticles(canvas.width, canvas.height)
-    }
-
-    const makeParticles = (w: number, h: number): Particle[] => {
-      const count = window.innerWidth < 768 ? 40 : 80
-      return Array.from({ length: count }, () => ({
-        x: Math.random() * w,
-        y: Math.random() * h,
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: (Math.random() - 0.5) * 0.4,
-        radius: Math.random() * 1.5 + 0.8,
-      }))
+      dotsRef.current = buildGrid(canvas.width, canvas.height)
     }
 
     resizeCanvas()
@@ -49,19 +61,11 @@ export default function ParticleBackground() {
 
     const handleMouseMove = (e: MouseEvent) => {
       const rect = canvas.getBoundingClientRect()
-      mouseRef.current = {
-        x: e.clientX - rect.left,
-        y: e.clientY - rect.top,
-      }
+      mouseRef.current = { x: e.clientX - rect.left, y: e.clientY - rect.top }
     }
-    const handleMouseLeave = () => {
-      mouseRef.current = { x: -9999, y: -9999 }
-    }
+    const handleMouseLeave = () => { mouseRef.current = { x: -9999, y: -9999 } }
     window.addEventListener('mousemove', handleMouseMove)
     window.addEventListener('mouseleave', handleMouseLeave)
-
-    const REPEL_RADIUS = 110
-    const CONNECTION_DIST = 130
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
@@ -69,46 +73,32 @@ export default function ParticleBackground() {
       const mx = mouseRef.current.x
       const my = mouseRef.current.y
 
-      particlesRef.current.forEach((p) => {
-        p.x += p.vx
-        p.y += p.vy
+      ctx.fillStyle = 'rgba(15, 23, 42, 0.22)'
 
-        if (p.x < 0 || p.x > canvas.width) p.vx *= -1
-        if (p.y < 0 || p.y > canvas.height) p.vy *= -1
+      dotsRef.current.forEach((d) => {
+        // Spring back to home
+        d.vx += (d.homeX - d.x) * SPRING
+        d.vy += (d.homeY - d.y) * SPRING
+        d.vx *= DAMPING
+        d.vy *= DAMPING
 
-        const dx = mx - p.x
-        const dy = my - p.y
+        // Mouse repel
+        const dx = d.x - mx
+        const dy = d.y - my
         const dist = Math.sqrt(dx * dx + dy * dy)
         if (dist < REPEL_RADIUS && dist > 0) {
-          const force = (REPEL_RADIUS - dist) / REPEL_RADIUS
-          p.x -= (dx / dist) * force * 2.5
-          p.y -= (dy / dist) * force * 2.5
+          const force = (1 - dist / REPEL_RADIUS) * REPEL_STRENGTH
+          d.vx += (dx / dist) * force
+          d.vy += (dy / dist) * force
         }
+
+        d.x += d.vx
+        d.y += d.vy
 
         ctx.beginPath()
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2)
-        ctx.fillStyle = 'rgba(15, 23, 42, 0.18)'
+        ctx.arc(d.x, d.y, RADIUS, 0, Math.PI * 2)
         ctx.fill()
       })
-
-      // Draw connections in a separate pass to avoid mid-loop state issues
-      for (let i = 0; i < particlesRef.current.length; i++) {
-        const a = particlesRef.current[i]
-        for (let j = i + 1; j < particlesRef.current.length; j++) {
-          const b = particlesRef.current[j]
-          const dx = a.x - b.x
-          const dy = a.y - b.y
-          const d = Math.sqrt(dx * dx + dy * dy)
-          if (d < CONNECTION_DIST) {
-            ctx.beginPath()
-            ctx.moveTo(a.x, a.y)
-            ctx.lineTo(b.x, b.y)
-            ctx.strokeStyle = `rgba(15, 23, 42, ${0.07 * (1 - d / CONNECTION_DIST)})`
-            ctx.lineWidth = 0.6
-            ctx.stroke()
-          }
-        }
-      }
 
       animationRef.current = requestAnimationFrame(animate)
     }
@@ -119,7 +109,7 @@ export default function ParticleBackground() {
       window.removeEventListener('resize', resizeCanvas)
       window.removeEventListener('mousemove', handleMouseMove)
       window.removeEventListener('mouseleave', handleMouseLeave)
-      if (animationRef.current) cancelAnimationFrame(animationRef.current)
+      cancelAnimationFrame(animationRef.current)
     }
   }, [])
 
