@@ -14,9 +14,9 @@
 
 .set {
   display: flex;
-  gap: 1.25rem;
+  gap: 2.5rem;
   align-items: center;
-  padding-right: 1.25rem;
+  padding-right: 2.5rem;
 }
 
 .logoWrap {
