@@ -11,6 +11,7 @@ const capabilities = [
   'Installation and workmanship reviews',
   'Material aging and performance assessments',
   'Repair versus replacement opinions',
+  'Residential and commercial Haag Certified Inspectors',
 ];
 
 export default function ForensicRoofingPage() {

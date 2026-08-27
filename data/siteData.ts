@@ -99,7 +99,7 @@ export const siteData = {
                 id: "forensic-roofing",
                 number: "05",
                 title: "FORENSIC ROOFING",
-                description: "Our forensic roofing expertise allows us to assess, analyze, and provide expert insights on roofing issues and failures to support insurance claims and legal proceedings.",
+                description: "Our forensic roofing expertise allows us to assess, analyze, and provide expert insights on roofing issues and failures to support insurance claims and legal proceedings. Our team includes Haag Certified Inspectors for both residential and commercial roofs.",
                 icon: "home",
             },
             {
@@ -149,7 +149,7 @@ export const siteData = {
                 id: "travis-academy",
                 number: "09",
                 title: "TRAVIS ACADEMY",
-                description: "Travis Academy offers structured education and certification programs for inspectors and industry partners, helping participants gain practical field skills, program credits, and professional support through the TRAVIS network.",
+                description: "Travis Academy offers structured education and certification programs for inspectors and industry partners, helping participants gain practical field skills, program credits, and professional support through the TRAVIS network. We have access to one of the largest groups of Haag Certified Inspectors across Canada.",
                 icon: "academy",
                 externalUrl: "https://travisstormteam.ca/#",
                 subServices: [
