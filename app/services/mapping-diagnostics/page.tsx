@@ -12,12 +12,12 @@ const scans = [
   {
     id: 'scan-1',
     label: 'Scan 01',
-    embedUrl: 'https://3dviewer.dji.com/s/2ba86113-aea8-4dc8-bc6a-033644ead6a1',
+    embedUrl: 'https://3dviewer.dji.com/s/0d5b52c3-b538-4ab8-ae42-2e41ca59b96f',
   },
   {
     id: 'scan-2',
     label: 'Scan 02',
-    embedUrl: 'https://3dviewer.dji.com/s/2b197242-9fa0-48e6-943b-34d6a8f3d894',
+    embedUrl: 'https://3dviewer.dji.com/s/f107dacc-2ec2-4b68-957c-9972a608c8fa',
   },
 ];
 
